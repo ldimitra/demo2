@@ -1,0 +1,22 @@
+version: "3.3"
+
+services:
+  accenture-backend:
+    container_name: accenture-backend
+    image: ldimitra/test2_accenture:2024-04-22
+    environment:
+      - SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/test_db
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+    ports:
+      - '8080:8080'
+
+  accenture-db:
+    container_name: accenture-db
+    image: postgres:14.7
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: test_db
+    ports:
+      - '5432:5432'
