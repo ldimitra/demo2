@@ -19,7 +19,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
-   steps:
+    steps:
     - name: Checkout projects
       uses: actions/checkout@v3
     
@@ -41,3 +41,5 @@ jobs:
         docker build -t ldimitra/test2_accenture:$(date +'%Y-%m-%d') .
         docker push ldimitra/test2_accenture:$(date +'%Y-%m-%d')
       
+
+ 
